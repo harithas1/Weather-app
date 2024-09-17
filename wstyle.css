@@ -1,0 +1,306 @@
+
+/* Universal Box-Sizing and Margin Reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* CSS Variables */
+:root {
+  --spacing-medium: 1vmin;    
+  --spacing-regular: 3vmin;
+  --font-small: 1vmin;
+  --font-regular: 2.5vmin;
+  --font-large: 4vmin;
+  --font-xl: 8vmin;
+  --font-semibold: 600;
+}
+
+/* Base Styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Icon Styles */
+.icon {
+  height: 6.25vmin;
+  width: 6.25vmin;
+  object-fit: contain;
+}
+
+/* Container Layout */
+.container {
+  width: 70vmin;
+  margin: var(--spacing-regular) auto;
+  border: 3px solid;
+  background: linear-gradient(45deg, purple 70%, darkblue);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "search search"
+    "current current"
+    "hourly hourly"
+    "fiveday fiveday"
+    "feelslike humidity"
+    "sunrise sunset";
+  gap: var(--spacing-regular);
+  padding: var(--spacing-regular);
+  border-radius: 3vmin;
+}
+
+article {
+  border: 3px solid;
+  border-radius: var(--spacing-medium);
+  padding: var(--spacing-regular);
+}
+
+/* Search Box */
+#search {
+  grid-area: search;
+  font-size: var(--font-regular);
+  padding: var(--spacing-medium);
+  border-radius: var(--spacing-medium);
+}
+
+/* Current Forecast */
+#current-forecast {
+  grid-area: current;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  gap: var(--spacing-medium);
+  background-color: rgba(0, 0, 139, 0.445);
+}
+
+#current-forecast h1 {
+  color: goldenrod;
+  font-size: 4.5vmin;
+  text-shadow: 1px 1px 0.5px beige;
+}
+
+#current-forecast .temp {
+  font-size: var(--font-xl);
+  color: beige;
+}
+
+#current-forecast .description {
+  text-transform: capitalize;
+  font-size: var(--font-regular);
+  font-weight: var(--font-semibold);
+}
+
+#current-forecast .min-max-temp {
+  font-size: var(--font-regular);
+  font-weight: var(--font-semibold);
+}
+
+/* Current Forecast Description Container */
+#current-forecast .description-container {
+  display: grid;
+  gap: var(--spacing-medium);
+  grid-auto-flow: column;
+  place-items: center;
+  background-color: #ffffff65;
+  border-radius: 10vmin;
+  border: 0.001px solid;
+  padding: 0 10px;
+}
+
+#current-forecast .description-container:hover {
+  cursor: pointer;
+  border: 0.01px solid beige;
+  transform: scale(1.05);
+}
+
+/* Hourly Forecast */
+#hourly-forecast {
+  grid-area: hourly;
+  text-align: center;
+  background-color: rgba(0, 0, 139, 0.445);
+}
+
+#hourly-forecast h1 {
+  font-size: 4vmin;
+  color: blanchedalmond;
+  text-shadow: 1px 1px 2px rgb(61, 6, 61);
+}
+
+.hourly-forecast-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-columns: minmax(100px, 1fr);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  margin-top: var(--spacing-regular);
+  padding: 5px 20px;
+}
+
+.hourly-forecast-container article {
+  border: 0.01px solid;
+  border-radius: 8vmin;
+  padding: 20px 0;
+  background-color: #ffffff38;
+  width: 10vmin;  
+}
+
+.hourly-forecast-container .hour-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hourly-forecast-container > article:hover {
+  cursor: pointer;
+  transform: scale(1.02) translateY(-3px);
+  border: 0.01px solid beige;
+}
+
+/* Five Day Forecast */
+#five-day-forecast {
+  grid-area: fiveday;
+  padding: 2.5vmin 3.5vmin;
+  background-color: rgba(0, 0, 139, 0.445);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+#five-day-forecast h1 {
+  font-size: 4vmin;
+  color: blanchedalmond;
+  text-shadow: 1px 1px 2px rgb(61, 6, 61);
+}
+
+.five-day-forecast-container {
+  display: grid;
+  gap: 1vmin;
+}
+
+.day-wise-forecast {
+  display: grid;
+  grid-template: auto / repeat(4, 1fr);
+  gap: var(--spacing-regular);
+  place-content: center;
+  place-items: center start;
+  border: 0.001px solid black;
+  border-radius: 10vmin;
+  padding: 5px 10px;
+  background-color: #ffffff38;
+}
+
+.day-wise-forecast .min-temp,
+.day-wise-forecast .max-temp {
+  font-size: var(--font-regular);
+  font-weight: var(--font-semibold);
+}
+
+.day-wise-forecast .min-temp {
+  opacity: 0.5;
+}
+
+.day-wise-forecast .max-temp {
+  justify-self: end;
+}
+
+.day-wise-forecast:hover {
+  cursor: pointer;
+  border: 0.01px solid beige;
+}
+
+.day-wise-forecast .day {
+  justify-self: start;
+  text-transform: capitalize;
+  color: mintcream;
+}
+
+/* Feels Like, Humidity, Sunrise, Sunset */
+#feels-like,
+#humidity,
+#sunrise,
+#sunset {
+  background-color: rgba(0, 0, 139, 0.445);
+  display: grid;
+  place-items: center;
+  gap: var(--spacing-regular);
+}
+
+#feels-like > h1,
+#humidity > h1,
+#sunrise > h1,
+#sunset > h1 {
+  font-size: 3vmin;
+  color: blanchedalmond;
+  text-shadow: 1px 1px 2px rgb(61, 34, 6);
+}
+
+#feels-like > p,
+#humidity > p,
+#sunrise > p,
+#sunset > p {
+  font-size: var(--font-regular);
+  font-weight: bold;
+}
+
+/* Icon Customization */
+#sunrise,
+#sunset {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--spacing-regular);
+}
+
+#sunrise i,
+#sunset i {
+  font-size: 50px;
+    grid-row: span 2;
+    color: #ffa500;
+  
+}
+
+#sunrise i {
+  color: #ffa500;
+}
+
+#sunset i {
+  color: #ff4500;
+}
+
+/* Responsive Design */
+@media (min-width: 650px) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  .container {
+    width: unset;
+    max-width: 95vmin;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "search search search search"
+      "current current current current"
+      "hourly hourly fiveday fiveday"
+      "feelslike humidity fiveday fiveday"
+      "sunrise sunrise sunset sunset";
+  }
+
+  #five-day-forecast {
+    padding: 1.5vmin 2vmin;
+  }
+
+  #sunrise {
+    grid-area: sunrise;
+  }
+
+  #sunset {
+    grid-area: sunset;
+  }
+}

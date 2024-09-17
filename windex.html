@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="wstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <script src="wmain.js"></script>
+    <main class="container">
+        <input type="search" placeholder="Enter City Name" name="cityName" id="search" class="searchbox" list="cities">
+        <datalist id="cities"></datalist>
+        <article id="current-forecast">
+        </article>
+        <article id="hourly-forecast">
+            <h1>Hourly Forecast</h1>
+            <section class="hourly-forecast-container">
+                <!-- <article>
+                    <h3 class="time">now</h3>
+                    <p class="icon">icon</p>
+                    <p class="hourly-temp">temp</p>
+                </article> -->
+            </section>
+        </article>
+        <article id="five-day-forecast">
+            <h1 style="margin-bottom: 15px; text-align: center;">6 day forecast</h1>
+            <section class="five-day-forecast-container">
+                <!-- <article class="day-wise-forecast">
+                    <h3 class="day">Today</h3>
+                    <img src="" alt="" class="icon">
+                    <p class="min-temp">low temp</p>
+                    <p class="max-temp">high temp</p>
+                </article> -->
+            </section>
+        </article>
+        <article id="feels-like">
+            <h1>Feels like</h1>
+            <p class="temp">temp</p>
+        </article>
+        <article id="humidity">
+            <h1>Humidity</h1>
+            <p class="humidity">value %</p>
+        </article>
+        <article id="sunrise">
+            <i class="fas fa-sun"></i>
+            <h1>Sunrise</h1>
+            <p class="srTime">temp</p>
+        </article>
+        <article id="sunset">
+            <i id="ssicon" class="fas fa-cloud-sun"></i>
+            <h1>Sunset</h1>
+            <p class="ssTime">temp</p>
+        </article>
+    </main>
+</body>
+
+</html>

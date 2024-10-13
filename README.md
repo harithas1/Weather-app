@@ -24,34 +24,34 @@ A simple weather application that provides current weather data, hourly forecast
 
 ### API Endpoints
 
-CURRENT_FORECAST_CORD: Endpoint for current weather data using coordinates.
+- CURRENT_FORECAST_CORD: Endpoint for current weather data using coordinates.
 
-CURRENT_FORECAST: Endpoint for current weather data using city name.
+- CURRENT_FORECAST: Endpoint for current weather data using city name.
 
-FIVE_DAY_FORECAST: Endpoint for five-day weather forecast.
+- FIVE_DAY_FORECAST: Endpoint for five-day weather forecast.
 
-GEO_LOCATION: Endpoint for retrieving geolocation data.
+- GEO_LOCATION: Endpoint for retrieving geolocation data.
 
 
 ## Key Functions
 
-formatTemp(value): Formats temperature values.
+- *formatTemp(value):* Formats temperature values.
 
-getIcon(iconCode): Generates the URL for weather icons.
+- *getIcon(iconCode):* Generates the URL for weather icons.
 
-loadCurrentForecast({lat, lon}): Loads the current weather forecast based on latitude and longitude.
+- *loadCurrentForecast({lat, lon}):* Loads the current weather forecast based on latitude and longitude.
 
-getHourlyForecast(city): Retrieves hourly weather forecasts for the specified city.
+- *getHourlyForecast(city):* Retrieves hourly weather forecasts for the specified city.
 
-createCurrentForecast(currentWeather): Creates and displays the current weather forecast on the UI.
+- *createCurrentForecast(currentWeather):* Creates and displays the current weather forecast on the UI.
 
-createHourlyForecast(hourlyForecast): Displays hourly weather data.
+- *createHourlyForecast(hourlyForecast):* Displays hourly weather data.
 
-createFiveDayForecast(hourlyForecast): Generates a five-day weather forecast.
+- *createFiveDayForecast(hourlyForecast):* Generates a five-day weather forecast.
 
-getGeoLocationInfo(cityName): Fetches geolocation data based on city name.
+- *getGeoLocationInfo(cityName):* Fetches geolocation data based on city name.
 
-onInput(event): Handles input events to fetch city suggestions based on user input.
+- *onInput(event):* Handles input events to fetch city suggestions based on user input.
 
 ## Project links
 - [GitHub Repository](https://github.com/harithas1/Weather-app.git)

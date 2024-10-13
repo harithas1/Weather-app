@@ -54,6 +54,6 @@ getGeoLocationInfo(cityName): Fetches geolocation data based on city name.
 onInput(event): Handles input events to fetch city suggestions based on user input.
 
 ## Project links
-- [GitHub Repository] (https://github.com/harithas1/Weather-app.git)
+- [GitHub Repository](https://github.com/harithas1/Weather-app.git)
 
-- [Live Demo] (https://harithas1.github.io/Weather-app/) 
+- [Live Demo](https://harithas1.github.io/Weather-app/) 

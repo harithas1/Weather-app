@@ -6,7 +6,7 @@ const END_POINTS = {
   CURRENT_FORECAST_CORD: "https://api.openweathermap.org/data/2.5/weather",
   CURRENT_FORECAST: "https://api.openweathermap.org/data/2.5/weather",
   FIVE_DAY_FORECAST: "https://api.openweathermap.org/data/2.5/forecast",
-  GEO_LOCATION: "http://api.openweathermap.org/geo/1.0/direct",
+  GEO_LOCATION: "https://api.openweathermap.org/geo/1.0/direct",
 };
 
 //4

@@ -1,4 +1,4 @@
-const API_KEY = "5b15a021068a09edff8b03e2ea1d9cf9";
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const Day_Of_The_Week = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadCurrentForecast = async ({ lat, lon }) => {
     //1
 
-    const cityName = "Chittoor";
+    const cityName = import.meta.env.VITE_DEFAULT_CITY || "Chittoor";
     const response =
       lat && lon
         ? await fetch(
